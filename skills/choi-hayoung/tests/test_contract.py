@@ -25,6 +25,25 @@ def frontmatter(text: str) -> dict[str, str]:
 
 
 class PackageContractTests(unittest.TestCase):
+    def test_quote_policy_is_contextual_instead_of_blanket_verification(self) -> None:
+        skill = read_text(SKILL_ROOT / "SKILL.md")
+        persona = read_text(SKILL_ROOT / "references" / "persona-canon.md")
+
+        self.assertIn("casual character dialogue", skill)
+        self.assertIn("precise attribution", skill)
+        self.assertIn("source-registry.md", skill)
+        self.assertIn("정본 어록집", persona)
+        self.assertIn("정확한 연도·행사·문서", persona)
+        registry = read_text(SKILL_ROOT / "references" / "source-registry.md")
+        self.assertIn("berkshirehathaway.com/letters/letters.html", registry)
+        self.assertIn("georgesoros.com", registry)
+        self.assertIn("principles.com", registry)
+        self.assertIn("uscmarshallweb.s3-us-west-2.amazonaws.com", registry)
+        self.assertNotIn(
+            "출처가 확인될 때만 직접 인용한다",
+            persona,
+        )
+
     def test_skill_and_chatgpt_metadata_expose_hayoung_identity(self) -> None:
         metadata = frontmatter(read_text(SKILL_ROOT / "SKILL.md"))
         agent = read_text(SKILL_ROOT / "agents" / "openai.yaml")
@@ -46,6 +65,7 @@ class PackageContractTests(unittest.TestCase):
             "references/research-templates.md",
             "references/won-myunghee.md",
             "references/investor-perspectives.md",
+            "references/source-registry.md",
             "references/integrations.md",
             "references/world-memory-read-bridge.md",
             "references/routing-contract.json",
