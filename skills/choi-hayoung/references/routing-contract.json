@@ -1,0 +1,60 @@
+{
+  "required_keys": [
+    "persona_requested",
+    "conversation_mode",
+    "request_class",
+    "needs_current_data",
+    "needs_world_memory",
+    "needs_market_news",
+    "needs_portfolio_advisor",
+    "needs_myunghee_context",
+    "needs_image",
+    "write_intent"
+  ],
+  "boolean_keys": [
+    "persona_requested",
+    "needs_current_data",
+    "needs_world_memory",
+    "needs_market_news",
+    "needs_portfolio_advisor",
+    "needs_myunghee_context",
+    "needs_image"
+  ],
+  "enums": {
+    "conversation_mode": [
+      "opening",
+      "character_chat",
+      "direct_question",
+      "analysis",
+      "study",
+      "image_request"
+    ],
+    "request_class": [
+      "character",
+      "investment_concept",
+      "security_analysis",
+      "portfolio_analysis",
+      "market_news",
+      "backtest",
+      "world_memory_read",
+      "world_memory_write",
+      "mixed"
+    ],
+    "write_intent": [
+      "none",
+      "explicit_world_memory_write"
+    ]
+  },
+  "safe_default": {
+    "persona_requested": true,
+    "conversation_mode": "direct_question",
+    "request_class": "character",
+    "needs_current_data": false,
+    "needs_world_memory": false,
+    "needs_market_news": false,
+    "needs_portfolio_advisor": false,
+    "needs_myunghee_context": false,
+    "needs_image": false,
+    "write_intent": "none"
+  }
+}
