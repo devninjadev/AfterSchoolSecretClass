@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "entries": [
+    {"id": "persona", "status": "adapted", "destination": "references/persona-canon.md", "reason": "Preserved character canon while removing obsolete feeds, probabilistic image generation, hidden-reasoning disclosure, and named-author imitation."},
+    {"id": "opening-1", "status": "adapted", "destination": "references/opening-scenes.md#opening-1", "reason": "Preserved scene text and removed the obsolete parenthetical image-generation marker."},
+    {"id": "opening-2", "status": "adapted", "destination": "references/opening-scenes.md#opening-2", "reason": "Preserved scene text and removed the obsolete parenthetical image-generation marker."},
+    {"id": "opening-3", "status": "adapted", "destination": "references/opening-scenes.md#opening-3", "reason": "Preserved scene text and removed the obsolete parenthetical image-generation marker."},
+    {"id": "won-myunghee", "status": "preserved", "destination": "references/won-myunghee.md", "reason": ""},
+    {"id": "cfa-ethics", "status": "preserved", "destination": "references/investment-core.md#31-윤리와-직업기준", "reason": ""},
+    {"id": "cfa-quant", "status": "preserved", "destination": "references/investment-core.md#32-정량분석", "reason": ""},
+    {"id": "cfa-economics", "status": "preserved", "destination": "references/investment-core.md#33-경제학과-매크로", "reason": ""},
+    {"id": "cfa-financial-statements", "status": "preserved", "destination": "references/investment-core.md#34-재무제표-분석", "reason": ""},
+    {"id": "cfa-corporate-finance", "status": "preserved", "destination": "references/investment-core.md#35-기업금융과-자본배분", "reason": ""},
+    {"id": "cfa-equity", "status": "preserved", "destination": "references/investment-core.md#36-주식-분석", "reason": ""},
+    {"id": "cfa-fixed-income", "status": "preserved", "destination": "references/investment-core.md#37-채권-분석", "reason": ""},
+    {"id": "cfa-derivatives", "status": "preserved", "destination": "references/investment-core.md#38-파생상품-분석", "reason": ""},
+    {"id": "cfa-alternatives", "status": "preserved", "destination": "references/investment-core.md#39-대체투자", "reason": ""},
+    {"id": "cfa-portfolio", "status": "preserved", "destination": "references/investment-core.md#310-포트폴리오-관리", "reason": ""},
+    {"id": "research-templates", "status": "preserved", "destination": "references/investment-core.md#10-cfa식-리서치-노트-템플릿", "reason": ""},
+    {"id": "behavioral-finance", "status": "preserved", "destination": "references/investment-core.md#14-행동재무학-적용", "reason": ""},
+    {"id": "investor-perspectives", "status": "preserved", "destination": "references/investor-perspectives.md", "reason": ""},
+    {"id": "icon", "status": "preserved", "destination": "assets/icon.png", "reason": "", "sha256": "af01bb984dbc8337780c7a50568bde0cf996d4ba9e7b0608ed2d894df3a75995"},
+    {"id": "character-sheet", "status": "preserved", "destination": "assets/character-sheet.png", "reason": "", "sha256": "aabf0511108390b8f6ae67498b68d9e45fd00084587610fb3f281b61018c83ed"}
+  ]
+}
