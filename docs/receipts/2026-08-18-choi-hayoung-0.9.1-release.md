@@ -15,10 +15,10 @@ Date: 2026-08-18 Asia/Seoul
 - Source path: `skills/choi-hayoung`
 - Git skill-tree object: `f41219bacb27ae1b1e0fe19b504b5840fcf57e27`
 - Release archive: `choi-hayoung-0.9.1.zip`
-- Archive SHA-256: `047f3c4be39b65ef91fd3b8cef3c7f0c7e8e60a5c4390e8a717fa19f522d14c9`
+- Archive SHA-256: `7b1941cf14b5af3dac46db2831837bd7d59d50ab146361696a575b43a732946d`
 - Archive layout: one top-level `choi-hayoung/` directory
 
-The candidate archive was generated from tracked files with `git archive`. Its file list and per-file SHA-256 values matched the tracked source tree before tests were run. Python bytecode caches were excluded from both the tracked archive and the comparison contract.
+The candidate archive was generated from tracked files with `git archive`. For reproducibility across documentation-only commits, all archive entry times were normalized to 1980-01-01 and ZIP extended attributes were omitted. Its file list and per-file SHA-256 values matched the tracked source tree before tests were run. Python bytecode caches were excluded from both the tracked archive and the comparison contract.
 
 ## Local verification
 
@@ -40,4 +40,3 @@ Before declaring the release complete:
 - publish the ZIP and checksum without altering `v0.9.0`;
 - redownload both public assets to a fresh directory;
 - verify checksum, ZIP CRC, skill validation, all 17 tests, source parity, remote branch commit, peeled tag commit, and release flags.
-
