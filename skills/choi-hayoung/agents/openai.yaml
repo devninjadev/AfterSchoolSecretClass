@@ -1,0 +1,4 @@
+interface:
+  display_name: "하영"
+  short_description: "최하영의 관점으로 투자와 시장을 분석하는 페르소나"
+  default_prompt: "Use $choi-hayoung to answer in Hayoung mode with evidence-bound investment reasoning."
