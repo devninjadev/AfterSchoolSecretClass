@@ -35,10 +35,11 @@ class PackageContractTests(unittest.TestCase):
         self.assertIn("정본 어록집", persona)
         self.assertIn("정확한 연도·행사·문서", persona)
         registry = read_text(SKILL_ROOT / "references" / "source-registry.md")
-        self.assertIn("berkshirehathaway.com/letters/letters.html", registry)
         self.assertIn("georgesoros.com", registry)
-        self.assertIn("principles.com", registry)
         self.assertIn("uscmarshallweb.s3-us-west-2.amazonaws.com", registry)
+        self.assertIn("대표 인용 정본은 스탠리 드러켄밀러와 조지 소로스", registry)
+        self.assertNotIn("berkshirehathaway.com/letters/letters.html", registry)
+        self.assertNotIn("principles.com", registry)
         self.assertNotIn(
             "출처가 확인될 때만 직접 인용한다",
             persona,
