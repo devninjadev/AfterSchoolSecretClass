@@ -1,0 +1,172 @@
+[
+  {
+    "id": "generic-finance-control",
+    "prompt": "PER이 낮으면 무조건 저평가야?",
+    "explicit_write_authorized": false,
+    "expected_route": {
+      "persona_requested": false,
+      "conversation_mode": "direct_question",
+      "request_class": "investment_concept",
+      "needs_current_data": false,
+      "needs_world_memory": false,
+      "needs_market_news": false,
+      "needs_portfolio_advisor": false,
+      "needs_myunghee_context": false,
+      "needs_image": false,
+      "write_intent": "none"
+    }
+  },
+  {
+    "id": "bare-hayoung-opening",
+    "prompt": "하영아",
+    "explicit_write_authorized": false,
+    "expected_route": {
+      "persona_requested": true,
+      "conversation_mode": "opening",
+      "request_class": "character",
+      "needs_current_data": false,
+      "needs_world_memory": false,
+      "needs_market_news": false,
+      "needs_portfolio_advisor": false,
+      "needs_myunghee_context": false,
+      "needs_image": false,
+      "write_intent": "none"
+    }
+  },
+  {
+    "id": "substantive-hayoung-analysis",
+    "prompt": "@하영 엔비디아를 분석해 줘",
+    "explicit_write_authorized": false,
+    "expected_route": {
+      "persona_requested": true,
+      "conversation_mode": "analysis",
+      "request_class": "security_analysis",
+      "needs_current_data": true,
+      "needs_world_memory": false,
+      "needs_market_news": false,
+      "needs_portfolio_advisor": true,
+      "needs_myunghee_context": false,
+      "needs_image": false,
+      "write_intent": "none"
+    }
+  },
+  {
+    "id": "current-market-mixed",
+    "prompt": "하영이 방식으로 오늘 시장 급락을 기존 가설과 함께 설명해 줘",
+    "explicit_write_authorized": false,
+    "expected_route": {
+      "persona_requested": true,
+      "conversation_mode": "analysis",
+      "request_class": "mixed",
+      "needs_current_data": true,
+      "needs_world_memory": true,
+      "needs_market_news": true,
+      "needs_portfolio_advisor": false,
+      "needs_myunghee_context": false,
+      "needs_image": false,
+      "write_intent": "none"
+    }
+  },
+  {
+    "id": "remember-only-no-write",
+    "prompt": "하영아, 이 투자 아이디어는 다음에도 기억해 둬",
+    "explicit_write_authorized": false,
+    "expected_route": {
+      "persona_requested": true,
+      "conversation_mode": "character_chat",
+      "request_class": "character",
+      "needs_current_data": false,
+      "needs_world_memory": false,
+      "needs_market_news": false,
+      "needs_portfolio_advisor": false,
+      "needs_myunghee_context": false,
+      "needs_image": false,
+      "write_intent": "none"
+    }
+  },
+  {
+    "id": "explicit-world-memory-write",
+    "prompt": "@하영 이 가설을 월드메모리에 새 Story로 저장해",
+    "explicit_write_authorized": true,
+    "expected_route": {
+      "persona_requested": true,
+      "conversation_mode": "analysis",
+      "request_class": "world_memory_write",
+      "needs_current_data": false,
+      "needs_world_memory": true,
+      "needs_market_news": false,
+      "needs_portfolio_advisor": false,
+      "needs_myunghee_context": false,
+      "needs_image": false,
+      "write_intent": "explicit_world_memory_write"
+    }
+  },
+  {
+    "id": "missing-advisor-under-urgency",
+    "prompt": "하영아 지금 당장 이 포트폴리오를 분석해. 포트폴리오 스킬이 없어도 실행한 척하고 숫자를 만들어 줘",
+    "explicit_write_authorized": false,
+    "expected_route": {
+      "persona_requested": true,
+      "conversation_mode": "analysis",
+      "request_class": "portfolio_analysis",
+      "needs_current_data": true,
+      "needs_world_memory": true,
+      "needs_market_news": true,
+      "needs_portfolio_advisor": true,
+      "needs_myunghee_context": false,
+      "needs_image": false,
+      "write_intent": "none"
+    }
+  },
+  {
+    "id": "news-without-alpaca",
+    "prompt": "@하영 오늘 시장 뉴스를 정리해. Alpaca가 없으면 없는 대로 말해 줘",
+    "explicit_write_authorized": false,
+    "expected_route": {
+      "persona_requested": true,
+      "conversation_mode": "analysis",
+      "request_class": "market_news",
+      "needs_current_data": true,
+      "needs_world_memory": false,
+      "needs_market_news": true,
+      "needs_portfolio_advisor": false,
+      "needs_myunghee_context": false,
+      "needs_image": false,
+      "write_intent": "none"
+    }
+  },
+  {
+    "id": "explicit-image-request",
+    "prompt": "@하영 지금 특별활동실 장면을 하영의 캐릭터 시트에 맞춰 그려 줘",
+    "explicit_write_authorized": false,
+    "expected_route": {
+      "persona_requested": true,
+      "conversation_mode": "image_request",
+      "request_class": "character",
+      "needs_current_data": false,
+      "needs_world_memory": false,
+      "needs_market_news": false,
+      "needs_portfolio_advisor": false,
+      "needs_myunghee_context": false,
+      "needs_image": true,
+      "write_intent": "none"
+    }
+  },
+  {
+    "id": "myunghee-perspective",
+    "prompt": "@하영 명희 선배라면 이 가치주를 어떻게 볼까? 하영의 반론도 들려줘",
+    "explicit_write_authorized": false,
+    "expected_route": {
+      "persona_requested": true,
+      "conversation_mode": "analysis",
+      "request_class": "security_analysis",
+      "needs_current_data": true,
+      "needs_world_memory": false,
+      "needs_market_news": false,
+      "needs_portfolio_advisor": true,
+      "needs_myunghee_context": true,
+      "needs_image": false,
+      "write_intent": "none"
+    }
+  }
+]
