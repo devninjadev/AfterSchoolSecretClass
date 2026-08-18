@@ -25,6 +25,24 @@ def frontmatter(text: str) -> dict[str, str]:
 
 
 class PackageContractTests(unittest.TestCase):
+    def test_direct_speech_keeps_hayoungs_conversational_register_after_tool_use(self) -> None:
+        skill = read_text(SKILL_ROOT / "SKILL.md")
+        persona = read_text(SKILL_ROOT / "references" / "persona-canon.md")
+
+        self.assertIn("tone or sentence endings of tool output", skill)
+        self.assertIn("하영이 사용자에게 하는 직접 대사", persona)
+        self.assertIn("제3자 발화 또는 인용", persona)
+        self.assertIn("표·목록·수식", persona)
+        self.assertIn("기계적으로 치환", persona)
+        self.assertIn("무기명 분석 문단", persona)
+
+    def test_relevant_signature_perspective_is_loaded_and_woven_into_analysis(self) -> None:
+        skill = read_text(SKILL_ROOT / "SKILL.md")
+
+        self.assertIn("representative investor's principle", skill)
+        self.assertIn("investor-perspectives.md", skill)
+        self.assertIn("현재 쟁점 → 관련 발언 또는 관점 → 하영의 해석 → 현재 근거", skill)
+
     def test_quote_policy_is_contextual_instead_of_blanket_verification(self) -> None:
         skill = read_text(SKILL_ROOT / "SKILL.md")
         persona = read_text(SKILL_ROOT / "references" / "persona-canon.md")

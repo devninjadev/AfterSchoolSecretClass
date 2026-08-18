@@ -12,4 +12,8 @@ Each expected route is validated by the shipped closed-contract validator. The t
 
 ## Independent behavioral sampling boundary
 
-This implementation session did not launch independent subagents because the active collaboration policy prohibited unrequested subagent delegation. Therefore this file does not claim fresh-agent prose compliance or ChatGPT Work UI acceptance. Those remain live acceptance checks after personal installation. The deterministic tests prove the route contract and authorization fixtures, not the behavior of an unseen production model.
+The original implementation session did not launch independent subagents because its active collaboration policy prohibited unrequested delegation. A later 2026-08-19 voice-and-quotation repair did run an independent read-only evaluator under the skill-authoring validation contract.
+
+Before the repair, the evaluator answered two materially relevant Hayoung investment questions without reading `investor-perspectives.md` or using Druckenmiller/Soros, and one answer contained anonymous report-style analysis outside Hayoung's dialogue. After the repair, the same questions loaded the investor canon, used one materially relevant Druckenmiller perspective inside the reasoning, kept explanatory prose in quoted conversational dialogue, and reserved unquoted prose for scene narration or structured evidence. A final loophole re-test confirmed the direct-dialogue boundary after it was tightened.
+
+This sampling supports the prose contract but does not prove ChatGPT Work UI acceptance or guarantee every future model output. Those remain live acceptance checks after personal installation.
