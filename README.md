@@ -20,7 +20,7 @@
 
 ## 설치 및 0.x에서 전환
 
-[GitHub Release v2.0.0](https://github.com/devninjadev/AfterSchoolSecretClass/releases/tag/v2.0.0)에서 `after-school-secret-class-plugin-2.0.0.zip`과 체크섬 파일을 내려받습니다. ZIP은 스킬 단독 압축파일이 아니라, 루트에 `plugin.json`이 있는 완전한 플러그인 패키지입니다.
+[GitHub Release v2.1.0](https://github.com/devninjadev/AfterSchoolSecretClass/releases/tag/v2.1.0)에서 `after-school-secret-class-plugin-2.1.0.zip`과 체크섬 파일을 내려받습니다. ZIP은 스킬 단독 압축파일이 아니라, 루트에 `plugin.json`이 있는 완전한 플러그인 패키지입니다.
 
 Plugin Creator에서 이 ZIP을 사용해 플러그인을 생성하거나, 편집 권한이 있는 동일한 패키지 ID의 기존 플러그인을 업데이트할 수 있습니다. 지원되는 설치·업데이트 흐름은 사용 중인 앱과 계정에 따라 다릅니다. ZIP을 개인 스킬 폴더에 그대로 풀어 넣는 0.x 설치 방식은 2.0의 기본 설치 방식이 아닙니다.
 
@@ -41,32 +41,41 @@ Plugin Creator에서 이 ZIP을 사용해 플러그인을 생성하거나, 편�
 ## 플러그인 구성
 
 ```text
-plugin.json                    # 표준 플러그인 설정, 버전 2.0.0
+plugin.json                    # 표준 플러그인 설정, 버전 2.1.0
 .codex-plugin/plugin.json      # Codex 호환 설정
 assets/gpt-icon.png            # 플러그인 아이콘
 skills/choi-hayoung/           # 내장 스킬과 모든 참고 자료
 scripts/build_plugin.py        # 패키지·체크섬 재생성
 ```
 
-기존 캐릭터와 근거 중심 투자 분석 계약은 유지합니다. 새 기능의 추가보다는 **배포·설치 단위를 스킬에서 플러그인으로 바꾸는 메이저 업데이트**입니다. 외부 연동 스킬과 커넥터는 자동 설치되지 않습니다.
+기존 캐릭터와 근거 중심 투자 분석 계약은 유지합니다. 새 기능의 추가보다는 **배포·설치 단위를 스킬에서 플러그인으로 바꾸는 메이저 업데이트**입니다. 2.1.0은 아래 세 분석 스킬을 내장하고 다섯 앱 연결을 선언합니다. 앱 인증과 실제 도구 접근은 사용하는 계정·세션에서 확인해야 합니다.
 
-## 선택적 연동 스킬
+## 내장 스킬과 앱 연결
 
-필요한 스킬이 설치되지 않았을 때 하영은 실행한 척하지 않고 기능 제한과 설치 위치를 안내합니다.
+| 내장 스킬 | 역할 | 출처 |
+|---|---|---|
+| `choi-hayoung` | 하영 페르소나와 분석 경로 선택 | 이 저장소 |
+| `market-news-radar` | 금융 뉴스와 시장 확인 | 사용자 지정 로컬 스킬 |
+| `world-memory-autopilot` **0.17.0** | Notion World Memory | [WorldMemoryLite](https://github.com/devninjadev/WorldMemoryLite) |
+| `evidence-first-portfolio-advisor` | 증거 기반 종목·포트폴리오·백테스트 | [PortfolioAnalysisSkillChatGPT](https://github.com/devninjadev/PortfolioAnalysisSkillChatGPT) |
 
-| 내부 스킬 | 저장소 |
-|---|---|
-| `$evidence-first-portfolio-advisor` | [PortfolioAnalysisSkillChatGPT](https://github.com/devninjadev/PortfolioAnalysisSkillChatGPT) |
-| `$world-memory-autopilot` | [WorldMemoryLite](https://github.com/devninjadev/WorldMemoryLite) |
-| `$market-news-radar` | [market-news-radar](https://github.com/devninjadev/market-news-radar) |
+개인 장부용 `portfolio-ledger-maintenance`는 포함하지 않습니다. 출처 커밋과 번들 조정 내역은 [BUNDLED-SOURCES.json](BUNDLED-SOURCES.json)에 기록합니다.
 
-관련 플러그인과 커넥터는 다음과 같습니다.
+`.app.json`과 플러그인 설정에는 **Alpaca, Wolfram, Binance, Exa, 공식 Notion**을 직접 선언합니다. 이 선언은 연결 대상을 포함하는 설정이며, 사용자 인증이나 모든 ChatGPT 세션에서의 도구 노출을 보증하지 않습니다. API 키·쿠키 등 인증정보는 패키지에 포함하지 않습니다.
 
-- **Alpaca:** 적격 미국 주식·암호화폐 가격 폴백, 시장 시계, ETF 시장 폭 확인
-- **공식 Wolfram:** 후순위 가격·환율·미국 국채 근거
-- **공식 Notion:** `notion-native-v2` World Memory 읽기 및 위임된 쓰기 작업
+- Alpaca: 시장 시계·ETF 관측 및 계약에 맞는 가격 폴백.
+- Wolfram: 검증된 금융·환율·국채 근거 및 계산.
+- Binance: 암호화폐 시장 관측. 지원하지 않는 데이터를 기존 검증기에 우회 입력하지 않습니다.
+- Exa: 출처 탐색과 원문 수집. 각 스킬의 검증·중복 제거 규칙을 따릅니다.
+- Notion: 검증된 World Memory 주소의 읽기 및 명시적으로 요청된 쓰기.
 
-스킬 설치와 플러그인 연결은 별도 상태입니다. 도구가 없거나 상태가 불명확하면 `unknown` 또는 `unavailable`로 취급합니다.
+이 플러그인은 주문·취소·이체·자동매매를 실행하지 않습니다. World Memory 저장·예약·수리는 별도 명시적 요청이 필요합니다.
+
+### ChatGPT 실행 조건
+
+내장 스킬은 외부 스킬 설치 없이 읽을 수 있습니다. 다만 Python 계산, 외부 네트워크, 패키지 설치, 내장 인터랙티브 차트는 실제 세션에 해당 기능이 있어야 합니다. 포트폴리오 스킬은 원본의 Work Cloud 전용 문구를 실제 기능 확인 조건으로 조정했고, 근거·종목 식별·공급자·환율·수익률 검증 계약은 유지했습니다. 계산 도구가 없으면 검증된 계산을 수행한 척하지 않습니다.
+
+World Memory 0.17.0은 6개 매체의 웹 검색을 기본 수집 경로로 사용합니다. Market News Radar의 RSS 수집은 별도 분석 경로이며 World Memory의 새 정책을 덮어쓰지 않습니다.
 
 ## World Memory 주의사항
 
@@ -91,12 +100,15 @@ python3 -m unittest discover -s skills/choi-hayoung/tests -p 'test_*.py'
 python3 scripts/build_plugin.py
 ```
 
-계약 테스트 19개와 패키지 검사를 사용합니다. 빌드 스크립트는 두 설정 파일의 이름·버전 일치, 아이콘 경로, 스킬 이름, 심볼릭 링크 제외, ZIP 무결성 및 패키지 파일의 원본 일치를 확인하고 SHA-256 체크섬을 생성합니다. 실제 대화 응답 및 선택적 외부 연동의 성공까지 보증하는 검사는 아닙니다.
+각 내장 스킬의 계약 테스트와 패키지 검사를 사용합니다. 빌드 스크립트는 두 설정 파일의 이름·버전 일치, 아이콘 경로, 스킬 이름, 심볼릭 링크 제외, ZIP 무결성 및 패키지 파일의 원본 일치를 확인하고 SHA-256 체크섬을 생성합니다. 실제 대화 응답 및 선택적 외부 연동의 성공까지 보증하는 검사는 아닙니다.
+
+World Memory 0.17.0의 원본 전체 테스트는 모두 통과하지 않습니다. 286개 실행에서 실패 보고 13건·가져오기 오류 3건이 확인됐습니다. 이전 RSS·VIX 정책 기대값과 제거된 함수 참조가 남아 있으며, 이 번들은 원본을 임의 수정하지 않습니다. 실제 Notion·예약 실행 성공을 의미하지 않습니다.
 
 ## 버전
 
-현재 GitHub 릴리즈: **`2.0.0` (플러그인)**
+현재 GitHub 릴리즈: **`2.1.0` (통합 플러그인)**
 
+- `2.1.0`: 분석 스킬 3개와 앱 연결 5개를 내장하고 World Memory를 0.17.0으로 동기화했습니다.
 - `2.0.0`: 독립 스킬에서 플러그인으로 전환. 플러그인 설정·아이콘·내장 `choi-hayoung`을 완전한 ZIP으로 배포하고 기존 사용자 전환 안내를 추가했습니다.
 
 전체 변경 내역은 [CHANGELOG.md](CHANGELOG.md)를 확인하세요.

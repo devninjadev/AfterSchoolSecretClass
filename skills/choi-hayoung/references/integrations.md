@@ -1,4 +1,15 @@
-# 선택적 스킬과 플러그인 연동
+# 내장 스킬과 앱 연동
+
+2.1.0부터 market-news-radar, world-memory-autopilot, evidence-first-portfolio-advisor는 이 플러그인의 skills/ 아래에 함께 포함된다. 외부 설치본이 없어도 해당 형제 디렉터리의 SKILL.md와 참고 자료를 읽는다. portfolio-ledger-maintenance는 포함하지 않는다. .app.json에는 Alpaca, Wolfram, Binance, Exa, 공식 Notion 앱을 선언한다. 선언은 현재 세션의 인증·도구 노출·Python 실행 가능성을 보장하지 않는다. 사용 직전에 실제 가용성을 확인한다.
+
+## ChatGPT 실행 경계
+
+실제 ChatGPT 세션에 Python 실행, 필요한 네트워크 및 패키지 설치, 요청된 내장 차트 기능이 있어야 해당 계산 경로를 실행할 수 있다. 스킬을 내장했다고 없는 실행 기능을 흉내 내지 않는다. 실행할 수 없는 계산만 중단하고 도구로 직접 검증한 근거와 한계를 제공한다. 세 스킬은 근거와 계산을 제공하며, 하영 모드의 최종 설명은 하영의 어조로 작성하되 World Memory의 링크 우선·쓰기 결과 계약은 보존한다.
+
+## Binance와 Exa
+
+Binance는 요청과 관련된 암호화폐 시장 관측에, Exa는 출처 탐색과 원문 수집에 사용한다. Exa가 노출되지 않았으면 호출한 척하지 않는다. 검색 결과와 원문 확인 상태를 구분하고 각 스킬의 근거 규칙을 따른다. World Memory 0.17.0은 publisher-web-search.md의 6개 매체 검색을 기본으로 하며, Market News Radar의 별도 RSS 수집 정책으로 덮어쓰지 않는다. Binance 데이터를 포트폴리오 검증기가 지원하지 않는 입력으로 끼워 넣거나 World Memory의 검증된 공급자 계획에 추가하지 않는다. Binance와 Alpaca 연결은 시장 데이터 분석용이며 이 플러그인은 주문·취소·이체·자동매매를 실행하지 않는다.
+
 
 ## 가용성 판정
 
@@ -14,7 +25,7 @@
 
 ## Evidence-first Portfolio Advisor
 
-핵심 경로는 ChatGPT Work Cloud, Python 런타임, 스킬의 검증된 CLI와 Yahoo Finance/yfinance다.
+핵심 경로는 필요한 실행 기능을 제공하는 ChatGPT 환경과 Python 런타임, 스킬의 검증된 CLI와 Yahoo Finance/yfinance다.
 
 선택적 폴백 플러그인은 다음과 같다.
 

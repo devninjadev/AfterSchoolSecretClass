@@ -22,7 +22,10 @@ def main():
         assert asset.is_relative_to(ROOT) and asset.is_file()
     skill = ROOT / "skills/choi-hayoung/SKILL.md"
     assert "\nname: choi-hayoung\n" in skill.read_text()
-    paths = [ROOT / "plugin.json", ROOT / ".codex-plugin/plugin.json", ROOT / "README.md", ROOT / "CHANGELOG.md", ROOT / "scripts/build_plugin.py"]
+    apps = json.loads((ROOT / ".app.json").read_text())["apps"]
+    assert len(apps) == 5 and all(x["id"] and isinstance(x["required"], bool) for x in apps.values())
+    assert manifest["extensions"]["com.openai"]["apps"] == "./.app.json"
+    paths = [ROOT / ".app.json", ROOT / "BUNDLED-SOURCES.json", ROOT / "plugin.json", ROOT / ".codex-plugin/plugin.json", ROOT / "README.md", ROOT / "CHANGELOG.md", ROOT / "scripts/build_plugin.py"]
     for directory in ("assets", "skills"):
         for path in sorted((ROOT / directory).rglob("*")):
             assert not path.is_symlink(), path
