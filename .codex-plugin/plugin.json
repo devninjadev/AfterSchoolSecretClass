@@ -4,18 +4,18 @@
       "skills"
     ],
     "category": "Education & Research",
-    "composerIcon": "./assets/gpt-icon.png",
+    "composerIcon": "./assets/hayoung-profile.png",
     "defaultPrompt": [
       "하영아"
     ],
     "developerName": "devninjadev",
     "displayName": "방과 후의 비밀 수업: 투자 초보자인 내가 천재 소녀에게 배우는 주식과 인생의 변동성",
-    "logo": "./assets/gpt-icon.png",
+    "logo": "./assets/hayoung-profile.png",
     "longDescription": "방과 후의 비밀 수업: 투자 초보자인 내가 천재 소녀에게 배우는 주식과 인생의 변동성",
     "shortDescription": "방과 후의 비밀 수업: 투자 초보자인 내가 천재 소녀에게 배우는 주식과 인생의 변동성"
   },
   "name": "gpt-74fe4a0ee07e49f9973488e3eb53d975",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "방과 후의 비밀 수업: 투자 초보자인 내가 천재 소녀에게 배우는 주식과 인생의 변동성",
   "author": {
     "name": "devninjadev"
