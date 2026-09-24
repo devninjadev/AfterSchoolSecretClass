@@ -1,5 +1,12 @@
 # 변경 내역
 
+## 2.1.1 — 2026-09-24
+
+- 추가된 세 분석 스킬의 제품 정책을 공식 열거값 `CHAT`, `CODEX`로 수정했습니다.
+- 포트폴리오 스킬 표시 설정에서 지원하지 않는 `capability_notes`를 제거했습니다.
+- 스킬 본문·분석 로직·다섯 앱 연결은 유지합니다.
+
+
 ## 2.1.0 — 2026-09-24
 
 - market-news-radar, WorldMemoryLite 0.17.0, evidence-first-portfolio-advisor를 내장했습니다. 개인 장부용 스킬은 포함하지 않습니다.

@@ -20,7 +20,7 @@
 
 ## 설치 및 0.x에서 전환
 
-[GitHub Release v2.1.0](https://github.com/devninjadev/AfterSchoolSecretClass/releases/tag/v2.1.0)에서 `after-school-secret-class-plugin-2.1.0.zip`과 체크섬 파일을 내려받습니다. ZIP은 스킬 단독 압축파일이 아니라, 루트에 `plugin.json`이 있는 완전한 플러그인 패키지입니다.
+[GitHub Release v2.1.1](https://github.com/devninjadev/AfterSchoolSecretClass/releases/tag/v2.1.1)에서 `after-school-secret-class-plugin-2.1.1.zip`과 체크섬 파일을 내려받습니다. ZIP은 스킬 단독 압축파일이 아니라, 루트에 `plugin.json`이 있는 완전한 플러그인 패키지입니다.
 
 Plugin Creator에서 이 ZIP을 사용해 플러그인을 생성하거나, 편집 권한이 있는 동일한 패키지 ID의 기존 플러그인을 업데이트할 수 있습니다. 지원되는 설치·업데이트 흐름은 사용 중인 앱과 계정에 따라 다릅니다. ZIP을 개인 스킬 폴더에 그대로 풀어 넣는 0.x 설치 방식은 2.0의 기본 설치 방식이 아닙니다.
 
@@ -106,7 +106,7 @@ World Memory 0.17.0의 원본 전체 테스트는 모두 통과하지 않습니�
 
 ## 버전
 
-현재 GitHub 릴리즈: **`2.1.0` (통합 플러그인)**
+현재 GitHub 릴리즈: **`2.1.1` (통합 플러그인)**
 
 - `2.1.0`: 분석 스킬 3개와 앱 연결 5개를 내장하고 World Memory를 0.17.0으로 동기화했습니다.
 - `2.0.0`: 독립 스킬에서 플러그인으로 전환. 플러그인 설정·아이콘·내장 `choi-hayoung`을 완전한 ZIP으로 배포하고 기존 사용자 전환 안내를 추가했습니다.
