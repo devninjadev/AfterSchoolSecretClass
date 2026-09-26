@@ -20,7 +20,7 @@
 
 ## 설치 및 0.x에서 전환
 
-[GitHub Release v2.1.3](https://github.com/devninjadev/AfterSchoolSecretClass/releases/tag/v2.1.3)에서 `after-school-secret-class-plugin-2.1.3.zip`과 체크섬 파일을 내려받습니다. ZIP은 스킬 단독 압축파일이 아니라, 루트에 `plugin.json`이 있는 완전한 플러그인 패키지입니다.
+[GitHub Release v2.1.4](https://github.com/devninjadev/AfterSchoolSecretClass/releases/tag/v2.1.4)에서 `after-school-secret-class-plugin-2.1.4.zip`과 체크섬 파일을 내려받습니다. ZIP은 스킬 단독 압축파일이 아니라, 루트에 `plugin.json`이 있는 완전한 플러그인 패키지입니다.
 
 Plugin Creator에서 이 ZIP을 사용해 플러그인을 생성하거나, 편집 권한이 있는 동일한 패키지 ID의 기존 플러그인을 업데이트할 수 있습니다. 지원되는 설치·업데이트 흐름은 사용 중인 앱과 계정에 따라 다릅니다. ZIP을 개인 스킬 폴더에 그대로 풀어 넣는 0.x 설치 방식은 2.0의 기본 설치 방식이 아닙니다.
 
@@ -106,7 +106,7 @@ World Memory 0.17.0의 원본 전체 테스트는 모두 통과하지 않습니�
 
 ## 버전
 
-현재 GitHub 릴리즈: **`2.1.3` (통합 플러그인)**
+현재 GitHub 릴리즈: **`2.1.4` (통합 플러그인)**
 
 - `2.1.0`: 분석 스킬 3개와 앱 연결 5개를 내장하고 World Memory를 0.17.0으로 동기화했습니다.
 - `2.0.0`: 독립 스킬에서 플러그인으로 전환. 플러그인 설정·아이콘·내장 `choi-hayoung`을 완전한 ZIP으로 배포하고 기존 사용자 전환 안내를 추가했습니다.
@@ -119,3 +119,7 @@ World Memory 0.17.0의 원본 전체 테스트는 모두 통과하지 않습니�
 ## Alpaca Paper Trading 폴백
 
 총 6개 앱을 선언합니다. 기존 Alpaca → Alpaca Paper Trading → 기존 다음 출처 순서이며, 앞선 단계가 성공하면 중복 조회하지 않습니다. Paper Trading은 선택적 읽기 전용 시장 데이터 폴백이고 주문·취소·계좌 변경을 수행하지 않습니다. 2026-09-26 시장 시계와 SPY IEX 스냅샷을 실조회했습니다. 기존 포트폴리오 이력 검증기와 응답 구조가 다르면 검증을 우회하지 않고 Wolfram 등 기존 대안으로 진행합니다. 앱 포함만으로 모든 데이터 권한이나 백테스트 호환성이 보장되지 않습니다.
+
+## 내장 스킬 원본 릴리즈 동기화
+
+PortfolioAnalysisSkillChatGPT 0.9.4, market-news-radar 0.1.1, WorldMemoryLite 0.17.1을 내장합니다. Paper Trading의 단일 심볼 일봉과 비어 있는 기업행동 구간을 호출 기록 보존 변환기로 검증하며, 미지원 기업행동과 미완료 페이지는 다음 출처로 넘깁니다. 기존 일반 ChatGPT 실행 기능 확인 조건은 보존합니다. 포트폴리오 175개 테스트가 통과했습니다. World Memory의 기존 VIX 기대값 실패는 유지됩니다.
