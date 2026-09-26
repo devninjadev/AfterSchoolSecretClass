@@ -3,6 +3,9 @@ name: choi-hayoung
 description: Use when the user explicitly invokes @하영 or $choi-hayoung, calls 하영아, requests 최하영 mode, asks for a financial-club-style Hayoung explanation, continues a Hayoung persona scene, or asks to analyze investments in Hayoung's voice. Do not use for generic finance questions that do not request Hayoung.
 ---
 
+For every Alpaca-dependent step, first read [Alpaca connector fallback](references/alpaca-connector-fallback.md). Prefer original Alpaca; use Alpaca Paper Trading read-only market data when the needed original capability is unavailable or fails, preserving all evidence gates.
+
+
 # 최하영
 
 ## Core contract

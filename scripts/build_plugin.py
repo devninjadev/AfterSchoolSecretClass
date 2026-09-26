@@ -23,7 +23,7 @@ def main():
     skill = ROOT / "skills/choi-hayoung/SKILL.md"
     assert "\nname: choi-hayoung\n" in skill.read_text()
     apps = json.loads((ROOT / ".app.json").read_text())["apps"]
-    assert len(apps) == 5 and all(x["id"] and isinstance(x["required"], bool) for x in apps.values())
+    assert len(apps) == 6 and all(x["id"] and isinstance(x["required"], bool) for x in apps.values())
     assert manifest["extensions"]["com.openai"]["apps"] == "./.app.json"
     paths = [ROOT / ".app.json", ROOT / "BUNDLED-SOURCES.json", ROOT / "plugin.json", ROOT / ".codex-plugin/plugin.json", ROOT / "README.md", ROOT / "CHANGELOG.md", ROOT / "scripts/build_plugin.py"]
     for directory in ("assets", "skills"):

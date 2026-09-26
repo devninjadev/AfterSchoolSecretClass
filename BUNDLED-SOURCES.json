@@ -1,5 +1,5 @@
 {
-  "version": "2.1.2",
+  "version": "2.1.3",
   "world_memory": {
     "repository": "https://github.com/devninjadev/WorldMemoryLite",
     "commit": "03c0d9f2257c1c00c7cfa48e423d47a58c708b25",
@@ -26,5 +26,11 @@
       "status": "not_all_passing",
       "note": "Unmodified upstream 0.17.0 tests retain RSS and old VIX expectations, and import removed collection_pages. No claim of full suite success."
     }
+  },
+  "alpaca_paper_trading_fallback": {
+    "app_id": "asdk_app_6a3cdf9e34b881918505f1cd5e06dbd8",
+    "scope": "read-only market data",
+    "smoke_test": "2026-09-26: get_clock + SPY IEX snapshot succeeded",
+    "limitation": "Paper history schema is not automatically compatible with legacy portfolio validator"
   }
 }
